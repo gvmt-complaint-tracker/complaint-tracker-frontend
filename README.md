@@ -85,4 +85,4 @@ User authentication for enhanced security and personalization.
 
 ---
 
-- Frontend deployed on [Vercel](http://localhost:8000)
+- Frontend deployed on [Vercel](https://gvt-complaint-tracker.vercel.app)
