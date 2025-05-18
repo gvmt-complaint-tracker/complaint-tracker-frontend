@@ -44,7 +44,7 @@ A Citizen Engagement System MVP to submit, track, and manage complaints or feedb
 
 1.  git clone `https://github.com/gvmt-complaint-tracker/complaint-tracker-frontend.git`
     cd complaint-tracker-frontend
-2.  API_URL=`https://complaint-tracker-backend.onrender.com`
+2.  API_BASE_URL=`https://complaint-tracker-backend.onrender.com`
 3.  Open any of the browsers you have at http://localhost:5173
 
 ### Usage
