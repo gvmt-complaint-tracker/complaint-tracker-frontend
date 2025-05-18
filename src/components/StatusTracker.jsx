@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import axios from "../api";
+import "../styles/StatusTracker.css";
 
 const StatusTracker = () => {
   const [query, setQuery] = useState("");
@@ -11,17 +12,15 @@ const StatusTracker = () => {
     setError("");
     setResult(null);
 
+    const payload = query.includes("TICKET-")
+      ? { ticketId: query }
+      : { email: query };
+
     try {
-      const res = await axios.get(
-        `/complaints/status?query=${encodeURIComponent(query)}`
-      );
-      if (res.data.length === 0) {
-        setError("No complaints found matching your query.");
-      } else {
-        setResult(res.data);
-      }
-    } catch {
-      setError("Failed to fetch status. Please try again.");
+      const res = await axios.post("/complaints/status", payload);
+      setResult([res.data]);
+    } catch (err) {
+      setError("Error fetching complaint");
     }
   };
 
@@ -47,10 +46,7 @@ const StatusTracker = () => {
           className="w-full px-4 py-2 mb-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
         />
 
-        <button
-          type="submit"
-          className="w-full py-2 px-4 bg-blue-700 hover:bg-blue-800 text-white font-semibold rounded-md transition duration-300"
-        >
+        <button type="submit" className="status-submit-btn">
           Check Status
         </button>
 
