@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import axios from "../api";
+import { useEffect, useState } from "react";
+import API from "../api";
 import "../styles/AdminDashboard.css";
 
 const statusClasses = {
@@ -14,7 +14,7 @@ const AdminDashboard = () => {
 
   const fetchComplaints = async () => {
     try {
-      const res = await axios.get("/complaints");
+      const res = await API.get("/complaints");
       setComplaints(res.data);
     } catch {
       setComplaints([]);
@@ -25,7 +25,7 @@ const AdminDashboard = () => {
 
   const updateStatus = async (id, newStatus) => {
     try {
-      await axios.put(`/complaints/${id}`, { status: newStatus });
+      await API.put(`/complaints/${id}`, { status: newStatus });
       fetchComplaints();
     } catch {}
   };

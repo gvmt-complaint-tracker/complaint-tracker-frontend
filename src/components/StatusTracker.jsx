@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios from "../api";
+import API from "../api";
 import "../styles/StatusTracker.css";
 
 const StatusTracker = () => {
@@ -17,7 +17,7 @@ const StatusTracker = () => {
       : { email: query };
 
     try {
-      const res = await axios.post("/complaints/status", payload);
+      const res = await API.post("/complaints/status", payload);
       setResult([res.data]);
     } catch (err) {
       setError("Error fetching complaint");
