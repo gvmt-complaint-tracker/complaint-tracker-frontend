@@ -10,6 +10,7 @@ const ComplaintForm = () => {
     description: "",
   });
   const [status, setStatus] = useState({ message: "", type: "" });
+  const [creatingComplaint, setCreatingComplaint] = useState(false);
 
   const handleChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -17,7 +18,9 @@ const ComplaintForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      setCreatingComplaint(true);
       await API.post("/complaints", formData);
+      setCreatingComplaint(false);
       setStatus({
         message: "Complaint submitted successfully!",
         type: "success",
@@ -103,7 +106,7 @@ const ComplaintForm = () => {
           className="w-full px-4 py-2 mb-6 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
         ></textarea>
         <button type="submit" className="submit-button">
-          Submit
+          {creatingComplaint ? "Submitting..." : "Submit"}
         </button>
       </form>
     </div>
