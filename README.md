@@ -34,21 +34,22 @@ A Citizen Engagement System MVP to submit, track, and manage complaints or feedb
 
    ```
 
-2. MONGODB_URI=<your_mongodb_atlas_connection_string>
-   PORT=5000
+2. MONGODB_URI=`mongodb://localhost:27017`
+   PORT=8000
 
 3. npm install
    npm run start
 
 ### Frontend
 
-1.  git clone <frontend-repo-url>
+1.  git clone `https://github.com/gvmt-complaint-tracker/complaint-tracker-frontend.git`
     cd complaint-tracker-frontend
-2.  VITE_API_URL=https://your-backend-url.onrender.com/api
-3.  VITE_API_URL=https://your-backend-url.onrender.com/api
-4.  Open any of the browsers you have at http://localhost:5173
+2.  API_URL=`https://complaint-tracker-backend.onrender.com`
+3.  Open any of the browsers you have at http://localhost:5173
 
 ### Usage
+
+---
 
 Navigate to Home to submit a complaint.
 
@@ -57,6 +58,8 @@ Go to Track Status to check complaint progress by entering your email or ticket 
 Visit Admin to manage complaints, update statuses, and respond.
 
 ### System Architecture
+
+---
 
 Frontend communicates with backend API via Axios.
 
@@ -68,6 +71,8 @@ Designed for scalability with modular React components and REST API backend.
 
 ### Future Improvements (Optional)
 
+---
+
 AI-assisted routing of complaints based on sentiment or keywords.
 
 Dashboard with complaint analytics for agencies.
@@ -78,6 +83,6 @@ User authentication for enhanced security and personalization.
 
 ### Live Demo
 
-- Frontend deployed on Vercel
+---
 
-- Backend deployed on Render
+- Frontend deployed on [Vercel](http://localhost:8000)
