@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios from "../api";
+import API from "../api";
 import "../styles/ComplaintForm.css";
 
 const ComplaintForm = () => {
@@ -17,7 +17,7 @@ const ComplaintForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("/complaints", formData);
+      await API.post("/complaints", formData);
       setStatus({
         message: "Complaint submitted successfully!",
         type: "success",
