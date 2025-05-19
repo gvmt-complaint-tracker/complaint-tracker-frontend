@@ -1,0 +1,34 @@
+/* src/styles/AdminDashboard.css */
+.status-button {
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 6px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-right: 8px;
+}
+.status-pending {
+  background-color: #d97706;
+}
+.status-pending:hover {
+  background-color: #b45309;
+}
+.status-in-progress {
+  background-color: #2563eb;
+}
+.status-in-progress:hover {
+  background-color: #1e40af;
+}
+.status-resolved {
+  background-color: #16a34a;
+}
+.status-resolved:hover {
+  background-color: #15803d;
+}
+.status-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #9ca3af;
+}
